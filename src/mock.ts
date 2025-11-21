@@ -1,3 +1,4 @@
+import { ChatConversation } from "./types/chat";
 import { SimulationData } from "./types/simulation";
 
 const images = {
@@ -134,3 +135,33 @@ export const SIMULATION_DATA: SimulationData = {
     },
   ],
 };
+
+export const CHAT_DATA: ChatConversation = {
+  chatMessages: [
+    {
+      isUser: true,
+      content: "Can you explain the difference between stocks and ETFs?"
+    },
+    {
+      isUser: false,
+      content: "Sure! A stock represents ownership in a single company, while an ETF is a fund that holds many stocks or other assets."
+    },
+    {
+      isUser: true,
+      content: "So ETFs are like a bundle of stocks?"
+    },
+    {
+      isUser: false,
+      content: "Exactly! They give you instant diversification, so your risk is spread across multiple companies instead of just one."
+    },
+    {
+      isUser: true,
+      content: "Are ETFs safer than individual stocks?"
+    },
+    {
+      isUser: false,
+      content: "Generally, yes, because diversification reduces the impact of any single company's poor performance. But they still carry market risk."
+    }
+  ]
+};
+
