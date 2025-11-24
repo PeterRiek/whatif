@@ -3,9 +3,12 @@
 import ChatButton from "@/src/components/chat-button";
 import ChatDrawer from "@/src/components/chat-drawer";
 import Simulation from "@/src/components/simulation";
-import { CHAT_DATA, SIMULATION_DATA } from "@/src/mock";
+import { CHAT_DATA, SIMULATION_DATA, SIMULATION_DATA_2 } from "@/src/mock";
 import { ChatConversation, ChatMessage } from "@/src/types/chat";
-import { SimulationData } from "@/src/types/simulation";
+import {
+  SimulationData,
+  SimulationDepotTransaction,
+} from "@/src/types/simulation";
 import { Box, Button, Drawer, Typography } from "@mui/material";
 import React, { useState } from "react";
 
@@ -16,20 +19,34 @@ const DemoPage: React.FC<Props> = ({}) => {
 
   const [chatData, setChatData] = useState<ChatConversation>(CHAT_DATA);
   const [simulationData, setSimulationData] =
-    useState<SimulationData>(SIMULATION_DATA);
+    useState<SimulationData>(SIMULATION_DATA_2);
 
   const toggleDrawer = (state: boolean) => () => {
     setOpen(state);
   };
 
   const sendMessage = (message: string) => {
+    const newDepotTransaction: SimulationDepotTransaction = {
+      date: simulationData.currentDate,
+      pricePerShare: 100,
+      shares: 1,
+      symbol: "PRIEK",
+      type: "buy",
+    };
+    setSimulationData((prev) => {
+      return {
+        ...prev,
+        depotTransactions: [...prev.depotTransactions, newDepotTransaction],
+      };
+    });
+
     const userMessage: ChatMessage = {
       isUser: true,
       content: message,
     };
     const agentMessage: ChatMessage = {
       isUser: false,
-      content: "Not Implemented yet, lorem ipsum dolor sit amet",
+      content: "Sure I added the transaction",
     };
     setChatData((prev) => {
       return {

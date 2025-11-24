@@ -18,3 +18,8 @@ export type SimulationData = {
   transactions: SimulationTransaction[];
   depotTransactions: SimulationDepotTransaction[];
 };
+
+export type ChartData = {
+  dates: string[];
+  values: number[];
+}

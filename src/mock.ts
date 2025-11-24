@@ -1,6 +1,10 @@
 import { ChatConversation } from "./types/chat";
 import { SimulationData } from "./types/simulation";
 
+/*
+/!\ FOR EVERY STOCK BOUGHT / SOLD ADD TRANSACTION ADDITIONALLY TO DEPOT TRANSACTION /!\
+*/
+
 const images = {
   starbucks:
     "https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/763px-Starbucks_Corporation_Logo_2011.svg.png",
@@ -11,7 +15,7 @@ const images = {
 };
 
 export const SIMULATION_DATA: SimulationData = {
-  currentDate: "2025-01-15",
+  currentDate: "2025-03-01",
   transactions: [
     {
       date: "2025-01-01",
@@ -103,6 +107,12 @@ export const SIMULATION_DATA: SimulationData = {
       amount: -4,
       imageUrl: images.starbucks,
     },
+    {
+      date: "2025-02-01",
+      name: "TEST",
+      amount: -4000,
+      imageUrl: images.commerzbank,
+    },
   ],
   depotTransactions: [
     {
@@ -140,28 +150,51 @@ export const CHAT_DATA: ChatConversation = {
   chatMessages: [
     {
       isUser: true,
-      content: "Can you explain the difference between stocks and ETFs?"
+      content: "Can you explain the difference between stocks and ETFs?",
     },
     {
       isUser: false,
-      content: "Sure! A stock represents ownership in a single company, while an ETF is a fund that holds many stocks or other assets."
+      content:
+        "Sure! A stock represents ownership in a single company, while an ETF is a fund that holds many stocks or other assets.",
     },
     {
       isUser: true,
-      content: "So ETFs are like a bundle of stocks?"
+      content: "So ETFs are like a bundle of stocks?",
     },
     {
       isUser: false,
-      content: "Exactly! They give you instant diversification, so your risk is spread across multiple companies instead of just one."
+      content:
+        "Exactly! They give you instant diversification, so your risk is spread across multiple companies instead of just one.",
     },
     {
       isUser: true,
-      content: "Are ETFs safer than individual stocks?"
+      content: "Are ETFs safer than individual stocks?",
     },
     {
       isUser: false,
-      content: "Generally, yes, because diversification reduces the impact of any single company's poor performance. But they still carry market risk."
-    }
-  ]
+      content:
+        "Generally, yes, because diversification reduces the impact of any single company's poor performance. But they still carry market risk.",
+    },
+  ],
 };
 
+export const SIMULATION_DATA_2: SimulationData = {
+  currentDate: "01-06-2023",
+  depotTransactions: [
+    {
+      date: "10-01-2023",
+      pricePerShare: 0,
+      shares: 2,
+      symbol: "AAPL",
+      type: "buy",
+    },
+  ],
+  transactions: [
+    {
+      date: "2023-01-01",
+      name: "Paycheck",
+      amount: 100,
+      imageUrl: images.commerzbank,
+    },
+  ],
+};
