@@ -84,11 +84,14 @@ const calculateChartData = async (
   simulationData.depotTransactions.forEach((t) => (stockValues[t.symbol] = {}));
   const symbols: string[] = Object.keys(stockValues) as string[];
   for (const symbol of symbols) {
-    const start = startDate.toLocaleDateString("en-CA")
-    const end = endDate.toLocaleDateString("en-CA")
-    const response = await fetch(
-      `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`
-    );
+    const start = startDate.toLocaleDateString("en-CA");
+    const end = endDate.toLocaleDateString("en-CA");
+    // const response = await fetch(
+    //   `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`
+    // );
+    // const url = `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`;
+    const url = `https://api.ahqu.de:2096/api/stock/${symbol}?start=${start}&end=${end}&interval=${"1d"}`;
+    const response = await fetch(url);
 
     const json = await response.json();
 
@@ -119,10 +122,8 @@ const calculateChartData = async (
         stockShares[depotTransaction.symbol] = 0;
       stockShares[depotTransaction.symbol] += depotTransaction.shares * mul;
       depotTransactionIndex++;
-      console.log("stockShares", stockShares);
     }
     const stocks: string[] = Object.keys(stockShares) as string[];
-    console.log("stocks", stocks);
     depotBalance =
       stocks.length == 0
         ? 0
