@@ -1,12 +1,43 @@
-import { NextResponse } from "next/server";
-import mock_data from "@/scripts/out.json"
-const API_KEY = process.env.FINNHUB_API_KEY;
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: Request, { params }: any) {
-  // const symbol = (await params).symbol;
-  // const { searchParams } = new URL(req.url);
-  // const from = searchParams.get("from");
-  // const to = searchParams.get("to");
+export async function GET(
+  req: NextRequest,
+  context: { params: Promise<{ symbol: string }> }
+) {
+  try {
+    const { symbol } = await context.params;
 
-  return NextResponse.json(mock_data);
+    const searchParams = req.nextUrl.searchParams;
+    const start = searchParams.get("start");
+    const end = searchParams.get("end");
+    const interval = searchParams.get("interval");
+
+    if (!start || !end || !interval) {
+      return NextResponse.json(
+        { error: "Missing required parameters: start, end, interval" },
+        { status: 400 }
+      );
+    }
+
+    const url = `https://api.ahqu.de:2096/api/stock/${symbol}?start=${start}&end=${end}&interval=${interval}`;
+    console.log(url);
+    const response = await fetch(url, { cache: "no-store" });
+
+    if (!response.ok) {
+      return NextResponse.json(
+        { error: `External API error (${response.status})` },
+        { status: response.status }
+      );
+    }
+
+    const data = await response.json();
+
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
 }

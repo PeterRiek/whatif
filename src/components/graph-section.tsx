@@ -84,8 +84,10 @@ const calculateChartData = async (
   simulationData.depotTransactions.forEach((t) => (stockValues[t.symbol] = {}));
   const symbols: string[] = Object.keys(stockValues) as string[];
   for (const symbol of symbols) {
+    const start = startDate.toLocaleDateString("en-CA")
+    const end = endDate.toLocaleDateString("en-CA")
     const response = await fetch(
-      `/api/stock/${symbol}?from=${startDate.toISOString()}&to=${endDate.toISOString()}&interval=1d`
+      `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`
     );
 
     const json = await response.json();
