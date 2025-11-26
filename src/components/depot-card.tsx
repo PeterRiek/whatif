@@ -26,7 +26,7 @@ const DepotCard: React.FC<Props> = ({ depotTransaction }) => {
               {symbol} — {type.toUpperCase()}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {date}
+              {date.toLocaleDateString("de-DE")}
             </Typography>
           </Stack>
 

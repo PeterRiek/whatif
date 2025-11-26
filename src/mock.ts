@@ -15,100 +15,100 @@ const images = {
 };
 
 export const SIMULATION_DATA: SimulationData = {
-  currentDate: "2025-03-01",
+  currentDate: new Date("2025-03-01"),
   transactions: [
     {
-      date: "2025-01-01",
+      date: new Date("2025-01-01"),
       name: "Paycheck",
       amount: 2500,
       imageUrl: images.commerzbank,
     },
     {
-      date: "2025-01-02",
+      date: new Date("2025-01-02"),
       name: "Starbucks Coffee",
       amount: -5,
       imageUrl: images.starbucks,
     },
     {
-      date: "2025-01-03",
+      date: new Date("2025-01-03"),
       name: "Electricity Bill",
       amount: -60,
       imageUrl: images.swm,
     },
     {
-      date: "2025-01-04",
+      date: new Date("2025-01-04"),
       name: "Groceries",
       amount: -120,
       imageUrl: images.rewe,
     },
     {
-      date: "2025-01-05",
+      date: new Date("2025-01-05"),
       name: "Gym Membership",
       amount: -35,
       imageUrl: "/icons/gym.png",
     },
     {
-      date: "2025-01-06",
+      date: new Date("2025-01-06"),
       name: "Netflix Subscription",
       amount: -15,
       imageUrl: "/icons/netflix.png",
     },
     {
-      date: "2025-01-07",
+      date: new Date("2025-01-07"),
       name: "Groceries",
       amount: -20,
       imageUrl: images.rewe,
     },
     {
-      date: "2025-01-08",
+      date: new Date("2025-01-08"),
       name: "Paycheck",
       amount: 2500,
       imageUrl: images.commerzbank,
     },
     {
-      date: "2025-01-09",
+      date: new Date("2025-01-09"),
       name: "Starbucks Coffee",
       amount: -4.5,
       imageUrl: images.starbucks,
     },
     {
-      date: "2025-01-10",
+      date: new Date("2025-01-10"),
       name: "Amazon Purchase",
       amount: -75,
       imageUrl: "/icons/shopping.png",
     },
     {
-      date: "2025-01-11",
+      date: new Date("2025-01-11"),
       name: "Gas Station",
       amount: -50,
       imageUrl: "/icons/gas.png",
     },
     {
-      date: "2025-01-12",
+      date: new Date("2025-01-12"),
       name: "Dividend Payment",
       amount: 12.5,
       imageUrl: "/icons/dividend.png",
     },
     {
-      date: "2025-01-13",
+      date: new Date("2025-01-13"),
       name: "Deposit",
       amount: 1000,
       imageUrl: "/icons/deposit.png",
     },
     {
-      date: "2025-01-14",
+      date: new Date("2025-01-14"),
       name: "Lunch Out",
       amount: -18,
       imageUrl: "/icons/lunch.png",
     },
     {
-      date: "2025-01-15",
+      date: new Date("2025-01-15"),
       name: "Coffee",
       amount: -4,
       imageUrl: images.starbucks,
     },
     {
-      date: "2025-02-01",
+      date: new Date("2025-02-01"),
       name: "TEST",
       amount: -4000,
       imageUrl: images.commerzbank,
@@ -116,28 +116,28 @@ export const SIMULATION_DATA: SimulationData = {
   ],
   depotTransactions: [
     {
-      date: "2025-01-05",
+      date: new Date("2025-01-05"),
       symbol: "AAPL",
       shares: 2,
       pricePerShare: 150,
       type: "buy",
     },
     {
-      date: "2025-01-09",
+      date: new Date("2025-01-09"),
       symbol: "GOOG",
       shares: 1,
       pricePerShare: 2800,
       type: "buy",
     },
     {
-      date: "2025-01-11",
+      date: new Date("2025-01-11"),
       symbol: "TSLA",
       shares: -1,
       pricePerShare: 220,
       type: "sell",
     },
     {
-      date: "2025-01-14",
+      date: new Date("2025-01-14"),
       symbol: "MSFT",
       shares: 3,
       pricePerShare: 300,
@@ -145,6 +145,7 @@ export const SIMULATION_DATA: SimulationData = {
     },
   ],
 };
+
 
 export const CHAT_DATA: ChatConversation = {
   chatMessages: [
@@ -178,11 +179,12 @@ export const CHAT_DATA: ChatConversation = {
   ],
 };
 
+// TODO: fix time format
 export const SIMULATION_DATA_2: SimulationData = {
-  currentDate: "01-06-2023",
+  currentDate: new Date("2023-03-01"),
   depotTransactions: [
     {
-      date: "10-01-2023",
+      date: new Date("2023-01-10"),
       pricePerShare: 0,
       shares: 2,
       symbol: "AAPL",
@@ -191,10 +193,28 @@ export const SIMULATION_DATA_2: SimulationData = {
   ],
   transactions: [
     {
-      date: "2023-01-01",
+      date: new Date("2023-01-01"),
       name: "Paycheck",
       amount: 100,
       imageUrl: images.commerzbank,
+    },
+    {
+      date: new Date("2023-01-04"),
+      name: "Starbucks Coffee",
+      amount: -10,
+      imageUrl: images.starbucks,
+    },
+    {
+      date: new Date("2023-01-07"),
+      name: "Starbucks Coffee",
+      amount: -10,
+      imageUrl: images.starbucks,
+    },
+    {
+      date: new Date("2023-01-20"),
+      name: "Starbucks Coffee",
+      amount: -10,
+      imageUrl: images.starbucks,
     },
   ],
 };

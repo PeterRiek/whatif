@@ -23,7 +23,7 @@ const TransactionCard: React.FC<Props> = ({ transaction }) => {
                 {transaction.name}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {transaction.date}
+                {transaction.date.toLocaleDateString("de-DE")}
               </Typography>
             </Stack>
 

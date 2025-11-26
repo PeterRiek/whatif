@@ -1,12 +1,12 @@
 export type SimulationTransaction = {
-  date: string;
+  date: Date;
   name: string;
   amount: number;
   imageUrl: string;
 };
 
 export type SimulationDepotTransaction = {
-  date: string;
+  date: Date;
   symbol: string;
   shares: number;
   pricePerShare: number;
@@ -14,12 +14,12 @@ export type SimulationDepotTransaction = {
 };
 
 export type SimulationData = {
-  currentDate: string;
+  currentDate: Date;
   transactions: SimulationTransaction[];
   depotTransactions: SimulationDepotTransaction[];
 };
 
 export type ChartData = {
-  dates: string[];
+  dates: Date[];
   values: number[];
 }

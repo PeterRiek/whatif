@@ -49,23 +49,21 @@ const generateDateRange = (
   return result;
 };
 
-const calculateChartData = (
+const calculateChartData = async (
   simulationData: SimulationData,
   interval: Interval = "daily"
-): ChartData => {
-  const firstTransactionDate = new Date(simulationData.transactions[0].date);
-  const firstDepotTransactionDate = new Date(
-    simulationData.depotTransactions[0].date
-  );
+): Promise<ChartData> => {
+  const firstTransactionDate = simulationData.transactions[0].date;
+  const firstDepotTransactionDate = simulationData.depotTransactions[0].date;
   const startDate =
     firstTransactionDate < firstDepotTransactionDate
       ? firstTransactionDate
       : firstDepotTransactionDate;
-  const endDate = new Date(simulationData.currentDate);
+  const endDate = simulationData.currentDate;
 
   const dates = generateDateRange(startDate, endDate, interval);
-  const values: number[] = [];
 
+  const values: number[] = [];
   let balance = 0;
   let transactionIndex = 0;
 
@@ -73,23 +71,83 @@ const calculateChartData = (
     const transactions = simulationData.transactions;
     while (
       transactionIndex < transactions.length &&
-      new Date(simulationData.transactions[transactionIndex].date) <= d
+      simulationData.transactions[transactionIndex].date <= d
     ) {
       balance += simulationData.transactions[transactionIndex].amount;
       transactionIndex++;
-      console.log(balance, transactionIndex);
     }
     values.push(balance);
   });
 
-  return { dates: dates.map((d) => d.toLocaleDateString("DE-de")), values };
+  const stockValues: Record<string, Record<string, number>> = {};
+
+  simulationData.depotTransactions.forEach((t) => (stockValues[t.symbol] = {}));
+  const symbols: string[] = Object.keys(stockValues) as string[];
+  for (const symbol of symbols) {
+    const response = await fetch(
+      `/api/stock/${symbol}?from=${startDate.toISOString()}&to=${endDate.toISOString()}&interval=1d`
+    );
+
+    const json = await response.json();
+
+    stockValues[symbol] = json;
+  }
+  const stockShares: Record<string, number> = {};
+  const lastStockPrice: Record<string, number> = {};
+
+  const depotValues: number[] = [];
+  let depotTransactionIndex = 0;
+  let depotBalance = 0;
+
+  dates.forEach((d) => {
+    const depotTransactions = simulationData.depotTransactions;
+    console.log(
+      d.toLocaleDateString("de-DE"),
+      depotTransactionIndex,
+      depotTransactions.length,
+      depotTransactions[depotTransactionIndex]
+    );
+    while (
+      depotTransactionIndex < depotTransactions.length &&
+      depotTransactions[depotTransactionIndex].date <= d
+    ) {
+      const depotTransaction = depotTransactions[depotTransactionIndex];
+      const mul = depotTransaction.type == "buy" ? 1 : -1;
+      if (!(depotTransaction.symbol in stockShares))
+        stockShares[depotTransaction.symbol] = 0;
+      stockShares[depotTransaction.symbol] += depotTransaction.shares * mul;
+      depotTransactionIndex++;
+      console.log("stockShares", stockShares);
+    }
+    const stocks: string[] = Object.keys(stockShares) as string[];
+    console.log("stocks", stocks);
+    depotBalance =
+      stocks.length == 0
+        ? 0
+        : stocks
+            .map((s) => {
+              const q = stockShares[s];
+              const v = stockValues[s][d.toLocaleDateString("en-CA")] as number;
+              if (v) lastStockPrice[s] = v;
+              else if (!Object.keys(lastStockPrice).includes(s)) return 0;
+              console.log("q,v", q, lastStockPrice[s]);
+              return q * lastStockPrice[s];
+            })
+            .reduce((a, b) => a + b);
+    depotValues.push(depotBalance);
+  });
+
+  return { dates: dates, values: values.map((x, i) => x + depotValues[i]) };
 };
 
 const GraphSection: React.FC<Props> = ({ data }) => {
   const [chartData, setChartData] = useState<ChartData | null>(null);
 
   useEffect(() => {
-    setChartData(calculateChartData(data, "daily"));
+    const init = async () => {
+      setChartData(await calculateChartData(data, "daily"));
+    };
+    init();
   }, [data]);
 
   return (
@@ -100,7 +158,7 @@ const GraphSection: React.FC<Props> = ({ data }) => {
         <LineChart
           xAxis={[
             {
-              data: chartData.dates,
+              data: chartData.dates.map((d) => d.toLocaleDateString("de-DE")),
               scaleType: "band",
             },
           ]}
