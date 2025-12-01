@@ -9,7 +9,7 @@ export type SimulationDepotTransaction = {
   date: Date;
   symbol: string;
   shares: number;
-  pricePerShare: number;
+  pricePerShare?: number;
   type: "buy" | "sell";
 };
 

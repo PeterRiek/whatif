@@ -1,16 +1,6 @@
-"use server";
+"use server"
 
 import { NextRequest, NextResponse } from "next/server";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-};
-
-export async function OPTIONS() {
-  return NextResponse.json({}, { status: 200, headers: corsHeaders });
-}
 
 export async function GET(
   req: NextRequest,
@@ -27,7 +17,7 @@ export async function GET(
     if (!start || !end || !interval) {
       return NextResponse.json(
         { error: "Missing required parameters: start, end, interval" },
-        { status: 400, headers: corsHeaders }
+        { status: 400 }
       );
     }
 
@@ -38,18 +28,18 @@ export async function GET(
     if (!response.ok) {
       return NextResponse.json(
         { error: `External API error (${response.status})` },
-        { status: response.status, headers: corsHeaders }
+        { status: response.status }
       );
     }
 
     const data = await response.json();
 
-    return NextResponse.json(data, { headers: corsHeaders });
+    return NextResponse.json(data);
   } catch (error) {
     console.error(error);
     return NextResponse.json(
       { error: "Internal Server Error" },
-      { status: 500, headers: corsHeaders }
+      { status: 500 }
     );
   }
 }

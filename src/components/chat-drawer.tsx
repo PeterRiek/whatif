@@ -1,7 +1,6 @@
 import { Box, Drawer, Typography } from "@mui/material";
 import React from "react";
 import ChatContent from "./chat-content";
-import { CHAT_DATA } from "../mock";
 import { ChatConversation } from "../types/chat";
 
 interface Props {

@@ -1,0 +1,219 @@
+{
+  "demo": {
+    "options": ["ratenzahlung.erklaerung", "ratenzahlung.extrem"],
+    "simulationData": {
+      "currentDate": "2025-03-01",
+      "transactions": [
+        {
+          "date": "2025-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        }
+      ],
+      "depotTransactions": [
+        {
+          "date": "2025-01-05",
+          "symbol": "AAPL",
+          "shares": 1,
+          "type": "buy"
+        }
+      ]
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": false,
+          "content": "Hey, wie kann ich dir weiterhelfen?"
+        }
+      ]
+    }
+  },
+  "ratenzahlung": {
+    "options": ["ratenzahlung.erklaerung", "ratenzahlung.extrem"],
+    "simulationData": {
+      "currentDate": "2025-03-01",
+      "transactions": [
+        {
+          "date": "2025-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2025-01-06",
+          "name": "Bought 1 XWD.TO share",
+          "amount": -96.53,
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2025-01-30",
+          "name": "Sold 1 XWD.TO share",
+          "amount": 99.92,
+          "imageUrl": "./img/stock.png"
+        }
+      ],
+      "depotTransactions": [
+        {
+          "date": "2025-01-06",
+          "symbol": "XWD.TO",
+          "shares": 1,
+          "type": "buy"
+        },
+        {
+          "date": "2025-01-30",
+          "symbol": "XWD.TO",
+          "shares": 1,
+          "type": "sell"
+        }
+      ]
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": false,
+          "content": "Hey, wie kann ich dir weiterhelfen?"
+        },
+        {
+          "isUser": true,
+          "content": "Zeige mir Simulationsdaten zu Ratenzahlungen."
+        },
+        {
+          "isUser": false,
+          "content": "Klar, hier ist die entsprechende Simulation!"
+        }
+      ]
+    }
+  },
+  "time": {
+    "options": ["time", "time.invest"],
+    "simulationData": {
+      "currentDate": "2025-03-01",
+      "transactions": [
+        {
+          "date": "2020-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2020-01-15",
+          "name": "Rent",
+          "amount": -800,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-01-20",
+          "name": "Groceries",
+          "amount": -200,
+          "imageUrl": "./img/groceries.png"
+        },
+        {
+          "date": "2021-07-10",
+          "name": "Vacation",
+          "amount": -1200,
+          "imageUrl": "./img/vacation.png"
+        },
+        {
+          "date": "2023-03-05",
+          "name": "Car maintenance",
+          "amount": -500,
+          "imageUrl": "./img/car.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        }
+      ],
+      "depotTransactions": []
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": false,
+          "content": "Hey, ich zeige dir, wie sich dein Geld entwickelt, wenn es einfach auf dem Konto bleibt."
+        }
+      ]
+    }
+  },
+  "time.invest": {
+    "options": ["time", "time.invest"],
+    "simulationData": {
+      "currentDate": "2025-03-01",
+      "transactions": [
+        {
+          "date": "2020-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2020-01-15",
+          "name": "Rent",
+          "amount": -800,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-01-20",
+          "name": "Groceries",
+          "amount": -200,
+          "imageUrl": "./img/groceries.png"
+        },
+        {
+          "date": "2021-07-10",
+          "name": "Vacation",
+          "amount": -1200,
+          "imageUrl": "./img/vacation.png"
+        },
+        {
+          "date": "2023-03-05",
+          "name": "Car maintenance",
+          "amount": -500,
+          "imageUrl": "./img/car.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Paycheck",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        }
+      ],
+      "depotTransactions": [
+        {
+          "date": "2020-01-31",
+          "symbol": "AAPL",
+          "shares": 1,
+          "type": "buy"
+        },
+        {
+          "date": "2020-02-28",
+          "symbol": "AAPL",
+          "shares": 1,
+          "type": "buy"
+        },
+        {
+          "date": "2020-03-31",
+          "symbol": "AAPL",
+          "shares": 1,
+          "type": "buy"
+        },
+        {
+          "date": "2025-01-05",
+          "symbol": "AAPL",
+          "shares": 1,
+          "type": "buy"
+        }
+      ]
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": false,
+          "content": "Hey, ich zeige dir, wie sich dein Geld entwickelt, wenn du regelmäßig investierst."
+        }
+      ]
+    }
+  }
+}

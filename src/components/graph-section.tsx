@@ -53,50 +53,71 @@ const calculateChartData = async (
   simulationData: SimulationData,
   interval: Interval = "daily"
 ): Promise<ChartData> => {
-  const firstTransactionDate = simulationData.transactions[0].date;
-  const firstDepotTransactionDate = simulationData.depotTransactions[0].date;
-  const startDate =
-    firstTransactionDate < firstDepotTransactionDate
-      ? firstTransactionDate
-      : firstDepotTransactionDate;
-  const endDate = simulationData.currentDate;
+  const { transactions, depotTransactions, currentDate } = simulationData;
 
+  // --- HANDLE CASE: no data at all ---
+  if (transactions.length === 0 && depotTransactions.length === 0) {
+    return { dates: [], values: [] };
+  }
+
+  // --- HANDLE CASE: transactions empty → only depot transactions used ---
+  // --- HANDLE CASE: depotTransactions empty → only transactions used ---
+  const firstTransactionDate = transactions.length > 0 ? transactions[0].date : null;
+  const firstDepotTransactionDate =
+    depotTransactions.length > 0 ? depotTransactions[0].date : null;
+
+  // Determine start date safely
+  let startDate: Date;
+  if (firstTransactionDate && firstDepotTransactionDate) {
+    startDate =
+      firstTransactionDate < firstDepotTransactionDate
+        ? firstTransactionDate
+        : firstDepotTransactionDate;
+  } else {
+    startDate = firstTransactionDate || firstDepotTransactionDate || currentDate;
+  }
+
+  const endDate = currentDate;
   const dates = generateDateRange(startDate, endDate, interval);
 
+  // ------- TRANSACTIONS BALANCE -------
   const values: number[] = [];
   let balance = 0;
   let transactionIndex = 0;
 
   dates.forEach((d) => {
-    const transactions = simulationData.transactions;
     while (
       transactionIndex < transactions.length &&
-      simulationData.transactions[transactionIndex].date <= d
+      transactions[transactionIndex].date <= d
     ) {
-      balance += simulationData.transactions[transactionIndex].amount;
+      balance += transactions[transactionIndex].amount;
       transactionIndex++;
     }
     values.push(balance);
   });
 
-  const stockValues: Record<string, Record<string, number>> = {};
+  // ------- DEPOT BALANCES -------
+  if (depotTransactions.length === 0) {
+    return {
+      dates,
+      values, // only cash balance
+    };
+  }
 
+  const stockValues: Record<string, Record<string, number>> = {};
   simulationData.depotTransactions.forEach((t) => (stockValues[t.symbol] = {}));
-  const symbols: string[] = Object.keys(stockValues) as string[];
+
+  const symbols = Object.keys(stockValues);
+
   for (const symbol of symbols) {
     const start = startDate.toLocaleDateString("en-CA");
     const end = endDate.toLocaleDateString("en-CA");
-    // const response = await fetch(
-    //   `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`
-    // );
-    // const url = `/api/stock/${symbol}?start=${start}&end=${end}&interval=1d`;
-    const url = `https://api.ahqu.de:2096/api/stock/${symbol}?start=${start}&end=${end}&interval=${"1d"}`;
+    const url = `https://api.ahqu.de:2096/api/stock/${symbol}?start=${start}&end=${end}&interval=1wk`;
+
     const response = await fetch(url);
-
-    const json = await response.json();
-
-    stockValues[symbol] = json;
+    stockValues[symbol] = await response.json();
   }
+
   const stockShares: Record<string, number> = {};
   const lastStockPrice: Record<string, number> = {};
 
@@ -105,50 +126,50 @@ const calculateChartData = async (
   let depotBalance = 0;
 
   dates.forEach((d) => {
-    const depotTransactions = simulationData.depotTransactions;
-    console.log(
-      d.toLocaleDateString("de-DE"),
-      depotTransactionIndex,
-      depotTransactions.length,
-      depotTransactions[depotTransactionIndex]
-    );
     while (
       depotTransactionIndex < depotTransactions.length &&
       depotTransactions[depotTransactionIndex].date <= d
     ) {
-      const depotTransaction = depotTransactions[depotTransactionIndex];
-      const mul = depotTransaction.type == "buy" ? 1 : -1;
-      if (!(depotTransaction.symbol in stockShares))
-        stockShares[depotTransaction.symbol] = 0;
-      stockShares[depotTransaction.symbol] += depotTransaction.shares * mul;
+      const dep = depotTransactions[depotTransactionIndex];
+      const mul = dep.type === "buy" ? 1 : -1;
+
+      stockShares[dep.symbol] = (stockShares[dep.symbol] || 0) + dep.shares * mul;
+
       depotTransactionIndex++;
     }
-    const stocks: string[] = Object.keys(stockShares) as string[];
+
+    const symbols = Object.keys(stockShares);
     depotBalance =
-      stocks.length == 0
+      symbols.length === 0
         ? 0
-        : stocks
-            .map((s) => {
-              const q = stockShares[s];
-              const v = stockValues[s][d.toLocaleDateString("en-CA")] as number;
-              if (v) lastStockPrice[s] = v;
-              else if (!Object.keys(lastStockPrice).includes(s)) return 0;
-              console.log("q,v", q, lastStockPrice[s]);
-              return q * lastStockPrice[s];
-            })
-            .reduce((a, b) => a + b);
+        : symbols.reduce((acc, s) => {
+            const q = stockShares[s];
+            const price = stockValues[s][d.toLocaleDateString("en-CA")];
+
+            if (price) {
+              lastStockPrice[s] = price;
+            }
+
+            return acc + q * (lastStockPrice[s] || 0);
+          }, 0);
+
     depotValues.push(depotBalance);
   });
 
-  return { dates: dates, values: values.map((x, i) => x + depotValues[i]) };
+  return {
+    dates,
+    values: values.map((v, i) => v + depotValues[i]),
+  };
 };
 
 const GraphSection: React.FC<Props> = ({ data }) => {
   const [chartData, setChartData] = useState<ChartData | null>(null);
 
   useEffect(() => {
+    if (!data) return;
+    console.log("graph working with", data);
     const init = async () => {
-      setChartData(await calculateChartData(data, "daily"));
+      setChartData(await calculateChartData(data, "weekly"));
     };
     init();
   }, [data]);

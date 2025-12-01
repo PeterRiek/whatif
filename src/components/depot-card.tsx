@@ -8,7 +8,7 @@ interface Props {
 
 const DepotCard: React.FC<Props> = ({ depotTransaction }) => {
   const { date, symbol, shares, pricePerShare, type } = depotTransaction;
-  const totalValue = (shares * pricePerShare).toLocaleString("de-DE");
+  const totalValue = (shares * (pricePerShare ?? 1)).toLocaleString("de-DE");
 
   // Simple avatar: first letter(s) of symbol
   const avatarLetter = symbol.slice(0, 2).toUpperCase();
