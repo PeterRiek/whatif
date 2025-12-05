@@ -13,9 +13,8 @@ export const mockHandleMessage = (
   chat: ChatConversation,
   msg: string
 ): ScenarioKey => {
-  if (msg.includes("ti")) return "time.invest";
-  if (msg.includes("t")) return "time";
-  if (msg.includes("r")) return "ratenzahlung";
 
-  return "demo";
+  if (msg.includes("Nein")) return "ratenzahlung"
+  if (msg.startsWith("Ja")) return "invest"
+  return "intro";
 };

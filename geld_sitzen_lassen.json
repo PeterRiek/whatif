@@ -1,0 +1,632 @@
+{
+  "geld_sitzen_lassen": {
+    "options": [
+      "geld_sitzen_lassen",
+      "geld_investieren"
+    ],
+    "simulationData": {
+      "currentDate": "2025-12-31",
+      "transactions": [
+        {
+          "date": "2005-01-01",
+          "name": "Gehalt",
+          "amount": 2500,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2005-01-01",
+          "name": "Miete",
+          "amount": -1200,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2005-01-01",
+          "name": "Einkäufe",
+          "amount": -1200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2005-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2006-01-01",
+          "name": "Gehalt",
+          "amount": 2550,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2006-01-01",
+          "name": "Miete",
+          "amount": -1215,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2006-01-01",
+          "name": "Einkäufe",
+          "amount": -1220,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2006-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2007-01-01",
+          "name": "Gehalt",
+          "amount": 2600,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2007-01-01",
+          "name": "Miete",
+          "amount": -1230,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2007-01-01",
+          "name": "Einkäufe",
+          "amount": -1240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2007-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2008-01-01",
+          "name": "Gehalt",
+          "amount": 2650,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2008-01-01",
+          "name": "Miete",
+          "amount": -1245,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2008-01-01",
+          "name": "Einkäufe",
+          "amount": -1260,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2008-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2009-01-01",
+          "name": "Gehalt",
+          "amount": 2700,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2009-01-01",
+          "name": "Miete",
+          "amount": -1260,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2009-01-01",
+          "name": "Einkäufe",
+          "amount": -1280,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2009-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2010-01-01",
+          "name": "Gehalt",
+          "amount": 2750,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2010-01-01",
+          "name": "Miete",
+          "amount": -1275,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2010-01-01",
+          "name": "Einkäufe",
+          "amount": -1300,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2010-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Gehalt",
+          "amount": 2800,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Miete",
+          "amount": -1290,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Einkäufe",
+          "amount": -1320,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Gehalt",
+          "amount": 2850,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Miete",
+          "amount": -1305,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Einkäufe",
+          "amount": -1340,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Gehalt",
+          "amount": 2900,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Miete",
+          "amount": -1320,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Einkäufe",
+          "amount": -1360,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Gehalt",
+          "amount": 2950,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Miete",
+          "amount": -1335,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Einkäufe",
+          "amount": -1380,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Gehalt",
+          "amount": 3000,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Miete",
+          "amount": -1350,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Einkäufe",
+          "amount": -1400,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Gehalt",
+          "amount": 3050,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Miete",
+          "amount": -1365,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Einkäufe",
+          "amount": -1420,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Gehalt",
+          "amount": 3100,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Miete",
+          "amount": -1380,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Einkäufe",
+          "amount": -1440,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Gehalt",
+          "amount": 3150,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Miete",
+          "amount": -1395,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Einkäufe",
+          "amount": -1460,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Gehalt",
+          "amount": 3200,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Miete",
+          "amount": -1410,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Einkäufe",
+          "amount": -1480,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Gehalt",
+          "amount": 3250,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Miete",
+          "amount": -1425,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Einkäufe",
+          "amount": -1500,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Gehalt",
+          "amount": 3300,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Miete",
+          "amount": -1440,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Einkäufe",
+          "amount": -1520,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Gehalt",
+          "amount": 3350,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Miete",
+          "amount": -1455,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Einkäufe",
+          "amount": -1540,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Gehalt",
+          "amount": 3400,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Miete",
+          "amount": -1470,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Einkäufe",
+          "amount": -1560,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Gehalt",
+          "amount": 3450,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Miete",
+          "amount": -1485,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Einkäufe",
+          "amount": -1580,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Gehalt",
+          "amount": 3500,
+          "imageUrl": "./img/commerzbank.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Miete",
+          "amount": -1500,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Einkäufe",
+          "amount": -1600,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Bought XWD.TO shares",
+          "imageUrl": "./img/stock.png"
+        }
+      ],
+      "depotTransactions": [
+        {
+          "date": "2005-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2006-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2007-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2008-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2009-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2010-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2011-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2012-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2013-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2014-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2015-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2016-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2017-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2018-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2019-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2020-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2021-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2022-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2023-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2024-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        },
+        {
+          "date": "2025-01-01",
+          "symbol": "XWD.TO",
+          "shares": 2,
+          "type": "buy"
+        }
+      ]
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": false,
+          "content": "Sieh her, dein Geld hat sich über 20 Jahre fast vollständig verausgabt, weil keine Investitionen getätigt wurden. Zusätzlich siehst du hier symbolische Käufe von XWD.TO Aktien jedes Jahr."
+        }
+      ]
+    }
+  }
+}

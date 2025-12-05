@@ -9,7 +9,7 @@ import {
   SimulationData,
   SimulationDepotTransaction,
 } from "@/src/types/simulation";
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress, LinearProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MOCK from "@/public/mock/scenario.json";
 
@@ -35,8 +35,6 @@ const DemoPage: React.FC<Props> = ({}) => {
   const loadScenario = async (scenario: ScenarioKey) => {
     const demo = MOCK[scenario];
 
-    console.log("demo laoded:", scenario, demo)
-
     const parsedSimulationData: SimulationData = {
       currentDate: new Date(demo.simulationData.currentDate),
       transactions: demo.simulationData.transactions.map((t) => ({
@@ -56,17 +54,15 @@ const DemoPage: React.FC<Props> = ({}) => {
         ...t,
         pricePerShare: price,
       });
-      console.log("working on", t)
     }
     parsedSimulationData.depotTransactions = depotTransactions;
-    console.log("Set parsed simulation data!", parsedSimulationData);
 
     setChatData(demo.chatData as ChatConversation);
     setSimulationData(parsedSimulationData);
   };
 
   useEffect(() => {
-    loadScenario("demo");
+    loadScenario("intro");
   }, []);
 
   const sendMessage = (message: string) => {
@@ -81,7 +77,7 @@ const DemoPage: React.FC<Props> = ({}) => {
   if (!chatData || !simulationData) {
     return (
       <>
-        <CircularProgress />
+        <LinearProgress />
       </>
     );
   }

@@ -62,7 +62,8 @@ const calculateChartData = async (
 
   // --- HANDLE CASE: transactions empty → only depot transactions used ---
   // --- HANDLE CASE: depotTransactions empty → only transactions used ---
-  const firstTransactionDate = transactions.length > 0 ? transactions[0].date : null;
+  const firstTransactionDate =
+    transactions.length > 0 ? transactions[0].date : null;
   const firstDepotTransactionDate =
     depotTransactions.length > 0 ? depotTransactions[0].date : null;
 
@@ -74,7 +75,8 @@ const calculateChartData = async (
         ? firstTransactionDate
         : firstDepotTransactionDate;
   } else {
-    startDate = firstTransactionDate || firstDepotTransactionDate || currentDate;
+    startDate =
+      firstTransactionDate || firstDepotTransactionDate || currentDate;
   }
 
   const endDate = currentDate;
@@ -133,7 +135,8 @@ const calculateChartData = async (
       const dep = depotTransactions[depotTransactionIndex];
       const mul = dep.type === "buy" ? 1 : -1;
 
-      stockShares[dep.symbol] = (stockShares[dep.symbol] || 0) + dep.shares * mul;
+      stockShares[dep.symbol] =
+        (stockShares[dep.symbol] || 0) + dep.shares * mul;
 
       depotTransactionIndex++;
     }
@@ -167,9 +170,8 @@ const GraphSection: React.FC<Props> = ({ data }) => {
 
   useEffect(() => {
     if (!data) return;
-    console.log("graph working with", data);
     const init = async () => {
-      setChartData(await calculateChartData(data, "weekly"));
+      setChartData(await calculateChartData(data, "monthly"));
     };
     init();
   }, [data]);
@@ -189,13 +191,21 @@ const GraphSection: React.FC<Props> = ({ data }) => {
           series={[
             {
               data: chartData.values,
-              curve: "linear",
+              // curve: "linear",
               showMark: false,
               valueFormatter: (value) => `${value} €`,
+              color: "#ffd400"
+            },
+          ]}
+          yAxis={[
+            {
+              min: 0,
+              max: 15000,
             },
           ]}
           width={300}
           height={300}
+    
         />
       )}
     </Card>

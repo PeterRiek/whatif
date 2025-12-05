@@ -1,130 +1,588 @@
 {
-  "demo": {
-    "options": ["ratenzahlung.erklaerung", "ratenzahlung.extrem"],
+  "intro": {
+    "options": [
+      "Ja, zeig mir mein Konto hätte ich Geld in einen ETF investiert.",
+      "Nein, aber kannst du mir mein Konto zeigen, sollten meine Ratenzahlungen eskalieren?"
+    ],
     "simulationData": {
       "currentDate": "2025-03-01",
+
       "transactions": [
         {
-          "date": "2025-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
-        }
-      ],
-      "depotTransactions": [
-        {
-          "date": "2025-01-05",
-          "symbol": "AAPL",
-          "shares": 1,
-          "type": "buy"
-        }
-      ]
-    },
-    "chatData": {
-      "chatMessages": [
-        {
-          "isUser": false,
-          "content": "Hey, wie kann ich dir weiterhelfen?"
-        }
-      ]
-    }
-  },
-  "ratenzahlung": {
-    "options": ["ratenzahlung.erklaerung", "ratenzahlung.extrem"],
-    "simulationData": {
-      "currentDate": "2025-03-01",
-      "transactions": [
-        {
-          "date": "2025-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
+          "date": "2010-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
         },
         {
-          "date": "2025-01-06",
-          "name": "Bought 1 XWD.TO share",
-          "amount": -96.53,
-          "imageUrl": "./img/stock.png"
-        },
-        {
-          "date": "2025-01-30",
-          "name": "Sold 1 XWD.TO share",
-          "amount": 99.92,
-          "imageUrl": "./img/stock.png"
-        }
-      ],
-      "depotTransactions": [
-        {
-          "date": "2025-01-06",
-          "symbol": "XWD.TO",
-          "shares": 1,
-          "type": "buy"
-        },
-        {
-          "date": "2025-01-30",
-          "symbol": "XWD.TO",
-          "shares": 1,
-          "type": "sell"
-        }
-      ]
-    },
-    "chatData": {
-      "chatMessages": [
-        {
-          "isUser": false,
-          "content": "Hey, wie kann ich dir weiterhelfen?"
-        },
-        {
-          "isUser": true,
-          "content": "Zeige mir Simulationsdaten zu Ratenzahlungen."
-        },
-        {
-          "isUser": false,
-          "content": "Klar, hier ist die entsprechende Simulation!"
-        }
-      ]
-    }
-  },
-  "time": {
-    "options": ["time", "time.invest"],
-    "simulationData": {
-      "currentDate": "2025-03-01",
-      "transactions": [
-        {
-          "date": "2020-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
-        },
-        {
-          "date": "2020-01-15",
-          "name": "Rent",
-          "amount": -800,
+          "date": "2010-01-01",
+          "name": "Miete",
+          "amount": -600,
           "imageUrl": "./img/rent.png"
         },
         {
-          "date": "2020-01-20",
-          "name": "Groceries",
+          "date": "2010-02-01",
+          "name": "Einkäufe",
           "amount": -200,
-          "imageUrl": "./img/groceries.png"
+          "imageUrl": "./img/shopping.png"
         },
         {
-          "date": "2021-07-10",
-          "name": "Vacation",
-          "amount": -1200,
-          "imageUrl": "./img/vacation.png"
+          "date": "2010-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         },
         {
-          "date": "2023-03-05",
-          "name": "Car maintenance",
-          "amount": -500,
-          "imageUrl": "./img/car.png"
+          "date": "2010-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2010-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2011-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2012-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2013-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2014-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2015-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2016-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2017-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2018-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2019-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2021-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2022-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2023-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2024-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         },
         {
           "date": "2025-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2025-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         }
       ],
       "depotTransactions": []
@@ -133,76 +591,631 @@
       "chatMessages": [
         {
           "isUser": false,
-          "content": "Hey, ich zeige dir, wie sich dein Geld entwickelt, wenn es einfach auf dem Konto bleibt."
+          "content": "Hey! Ich habe deinen Verlauf analysiert. Möchtest du sehen, was passiert ist, wenn du dein Geld einfach nur auf dem Konto liegen lässt?"
+        },
+        {
+          "isUser": true,
+          "content": "Ja, zeig’s mir."
+        },
+        {
+          "isUser": false,
+          "content": "Klar! Über die letzten 15 Jahre hast du jeden Monat etwas übrig behalten – aber das Geld lag komplett ungenutzt da.\nDa die Zinsen fast bei 0 % waren, ist dein Kontostand nahezu flach geblieben."
+        },
+        {
+          "isUser": true,
+          "content": "Also ist mein Geld nicht gewachsen?"
+        },
+        {
+          "isUser": false,
+          "content": "Genau. In der Praxis bedeutet das:\nDein Kontostand ist kaum gestiegen, obwohl du jahrelang gespart hast.\nGleichzeitig wurde dein Geld durch Inflation jedes Jahr weniger wert.\nReal bedeutet das: Dein Erspartes hat an Kaufkraft verloren, obwohl du nichts falsch gemacht hast."
+        },
+        {
+          "isUser": true,
+          "content": "Wie viel hätte ich denn heute real?"
+        },
+        {
+          "isUser": false,
+          "content": "Weniger als in den Jahren zuvor, trotz Sparen. Dein Konto ist stabil, aber ohne Wachstum.\nWenn du magst, können wir direkt testen, wie ein Sparplan oder ein ETF-Investment über denselben Zeitraum ausgesehen hätte."
         }
       ]
     }
   },
-  "time.invest": {
-    "options": ["time", "time.invest"],
+  "invest": {
+    "options": [
+      "Danke, zeig mir nochmal ohne MSCI World"
+    ],
     "simulationData": {
       "currentDate": "2025-03-01",
+
       "transactions": [
         {
-          "date": "2020-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
+          "date": "2010-01-01",
+          "name": "Depot: MSCI World",
+          "amount": -1761,
+          "imageUrl": "./img/stock.png"
         },
         {
-          "date": "2020-01-15",
-          "name": "Rent",
-          "amount": -800,
+          "date": "2010-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2010-01-01",
+          "name": "Miete",
+          "amount": -600,
           "imageUrl": "./img/rent.png"
         },
         {
-          "date": "2020-01-20",
-          "name": "Groceries",
+          "date": "2010-02-01",
+          "name": "Einkäufe",
           "amount": -200,
-          "imageUrl": "./img/groceries.png"
+          "imageUrl": "./img/shopping.png"
         },
         {
-          "date": "2021-07-10",
-          "name": "Vacation",
-          "amount": -1200,
-          "imageUrl": "./img/vacation.png"
+          "date": "2010-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         },
         {
-          "date": "2023-03-05",
-          "name": "Car maintenance",
-          "amount": -500,
-          "imageUrl": "./img/car.png"
+          "date": "2010-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2010-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2011-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2011-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2011-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2012-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2012-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2012-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2013-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2013-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2013-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2014-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2014-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2014-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2015-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2015-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2015-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2016-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2016-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2016-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2017-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2017-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2017-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2018-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2018-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2018-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2019-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2019-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2019-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2021-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2022-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2023-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2024-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         },
         {
           "date": "2025-01-01",
-          "name": "Paycheck",
-          "amount": 2500,
-          "imageUrl": "./img/commerzbank.png"
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2025-02-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-04-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-07-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-11-01",
+          "name": "Einkäufe",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
         }
       ],
       "depotTransactions": [
         {
-          "date": "2020-01-31",
-          "symbol": "AAPL",
-          "shares": 1,
-          "type": "buy"
-        },
-        {
-          "date": "2020-02-28",
-          "symbol": "AAPL",
-          "shares": 1,
-          "type": "buy"
-        },
-        {
-          "date": "2020-03-31",
-          "symbol": "AAPL",
-          "shares": 1,
-          "type": "buy"
-        },
-        {
-          "date": "2025-01-05",
-          "symbol": "AAPL",
-          "shares": 1,
+          "date": "2010-01-15",
+          "symbol": "XWD.TO",
+          "shares": 100,
           "type": "buy"
         }
       ]
@@ -210,8 +1223,475 @@
     "chatData": {
       "chatMessages": [
         {
+          "isUser": true,
+          "content": "Ja, zeig mir bitte wir mein konto aussehen würde, hätte ich Geld in einen ETF investiert."
+        },
+        {
           "isUser": false,
-          "content": "Hey, ich zeige dir, wie sich dein Geld entwickelt, wenn du regelmäßig investierst."
+          "content": "Alles klar – ich simuliere eine historische Entwicklung:\nDu hast am 15. Januar 2010 100 MSCI-World-Anteile gekauft.\nSeitdem ist der Wert des ETFs über die Jahre deutlich gestiegen"
+        },
+        {
+          "isUser": true,
+          "content": "Wie viel wäre das heute wert?"
+        },
+        {
+          "isUser": false,
+          "content": "Heute (März 2025) läge der Wert deiner damaligen Investition bei einem Vielfachen des ursprünglichen Betrags.\nWährend dein Konto ohne Investition quasi stabil blieb, hätte dein Depot über die Jahre ein starkes Wachstum erlebt, vor allem durch:\n- globale Diversifikation\n- langfristigen Trend steigender Unternehmensgewinne\n- Zinseszins auf Kursgewinne"
+        },
+        {
+          "isUser": true,
+          "content": "Ja! Der Unterschied ist enorm:\n- Auf dem Konto: fast keine Veränderung\n- Im MSCI World: sehr deutlicher Wertzuwachs"
+        }
+      ]
+    }
+  },
+  "ratenzahlung": {
+    "options": ["Ah ok checke. Wie sah es nochmal vorhin aus?"],
+    "simulationData": {
+      "currentDate": "2029-03-01",
+      "transactions": [
+        {
+          "date": "2020-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2020-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2020-01-15",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -50,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2020-02-15",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -50,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2021-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2021-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2021-01-10",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-01-15",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -50,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2021-03-10",
+          "name": "Ratenzahlung: Laptop",
+          "amount": -90,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2022-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2022-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2022-01-15",
+          "name": "Ratenzahlung: E-Scooter",
+          "amount": -85,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-02-10",
+          "name": "Ratenzahlung: Couch",
+          "amount": -150,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2022-03-05",
+          "name": "Ratenzahlung: Laptop",
+          "amount": -90,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2023-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2023-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2023-01-15",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-02-15",
+          "name": "Ratenzahlung: Couch",
+          "amount": -150,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2023-03-15",
+          "name": "Ratenzahlung: Kamera",
+          "amount": -95,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2024-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2024-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2024-01-10",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-02-05",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-02-20",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-03-15",
+          "name": "Ratenzahlung: Möbelset",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2024-03-20",
+          "name": "Ratenzahlung: Playstation / Konsole",
+          "amount": -100,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2025-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2025-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+
+        {
+          "date": "2025-01-05",
+          "name": "Ratenzahlung: Küchenmöbel",
+          "amount": -350,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-10",
+          "name": "Ratenzahlung: Sofa",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-15",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-20",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-25",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2025-01-28",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2026-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2026-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+
+        {
+          "date": "2026-01-05",
+          "name": "Ratenzahlung: Küchenmöbel",
+          "amount": -350,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2026-01-10",
+          "name": "Ratenzahlung: Sofa",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2026-01-15",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2026-01-20",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2026-01-25",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2026-01-28",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        },
+
+        {
+          "date": "2027-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2027-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2027-01-05",
+          "name": "Ratenzahlung: Küchenmöbel",
+          "amount": -350,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2027-01-10",
+          "name": "Ratenzahlung: Sofa",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2027-01-15",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2027-01-20",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2027-01-25",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2027-01-28",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2028-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+        {
+          "date": "2028-01-05",
+          "name": "Ratenzahlung: Küchenmöbel",
+          "amount": -350,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-10",
+          "name": "Ratenzahlung: Sofa",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-15",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-20",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-25",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2028-01-28",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-01",
+          "name": "Gehalt",
+          "amount": 1500,
+          "imageUrl": "./img/job.png"
+        },
+        {
+          "date": "2029-01-01",
+          "name": "Miete",
+          "amount": -600,
+          "imageUrl": "./img/rent.png"
+        },
+
+        {
+          "date": "2029-01-05",
+          "name": "Ratenzahlung: Küchenmöbel",
+          "amount": -350,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-10",
+          "name": "Ratenzahlung: Sofa",
+          "amount": -200,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-15",
+          "name": "Ratenzahlung: Fernseher",
+          "amount": -120,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-20",
+          "name": "Ratenzahlung: Urlaubsreise",
+          "amount": -240,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-25",
+          "name": "Ratenzahlung: Gaming-PC",
+          "amount": -180,
+          "imageUrl": "./img/shopping.png"
+        },
+        {
+          "date": "2029-01-28",
+          "name": "Ratenzahlung: Smartphone",
+          "amount": -70,
+          "imageUrl": "./img/shopping.png"
+        }
+      ],
+      "depotTransactions": []
+    },
+    "chatData": {
+      "chatMessages": [
+        {
+          "isUser": true,
+          "content": "Nein, aber kannst du mir zeigen wie mein Konto aussieht, sollten meine Anschaffungen auf Ratenzahlung außer Kontrolle geraten."
+        },
+        {
+          "isUser": false,
+          "content": "Schau dir die letzten fünf Jahre an:\nDu hast mit kleinen Raten angefangen – ein Smartphone, ein Fernseher … alles überschaubar.\nAber jedes Jahr kam etwas Neues dazu: Laptop, Möbel, Kamera, Reise, Gaming-PC, Küche."
+        },
+        {
+          "isUser": true,
+          "content": "Wie schlimm ist es geworden?"
+        },
+        {
+          "isUser": false,
+          "content": "Extrem. Anfangs waren es 50 € im Monat, später 300 €, dann 500 €, und im Jahr 2027 liegen die monatlichen Raten bei über 1.000 €.\nDamit frisst die Ratenzahlung fast dein gesamtes Einkommen auf."
+        },
+        {
+          "isUser": true,
+          "content": "Und was bedeutet das für meinen Kontostand?"
+        },
+        {
+          "isUser": false,
+          "content": "- Du hast kaum noch Geld für Miete, Essen oder Notfälle.\n- Ein unerwarteter Ausfall würde sofort ins Minus führen.\n- Die ständige Belastung macht Sparen oder Investieren unmöglich.\n- Und viele Raten enthalten zusätzlich hohe Zinsen – dein Geld arbeitet gegen dich."
+        },
+        {
+          "isUser": true,
+          "content": "Kann man da noch rauskommen?"
+        },
+        {
+          "isUser": false,
+          "content": "Ja, aber es dauert:\n- Verträge bündeln\n- unnötige Raten kündigen\n- Prioritäten setzen\n- Budget neu aufstellen\n- Wenn du willst, simuliere ich dir direkt, wie lange es dauern würde, wieder auf Null zu kommen."
         }
       ]
     }

@@ -1,4 +1,4 @@
-import { Box, Drawer, Typography } from "@mui/material";
+import { Box, Drawer } from "@mui/material";
 import React from "react";
 import ChatContent from "./chat-content";
 import { ChatConversation } from "../types/chat";
@@ -20,6 +20,7 @@ const ChatDrawer: React.FC<Props> = ({ chatData, open, toggleDrawer, sendMessage
           flexDirection="column"
           height="100%"
           width="80vw"
+          maxWidth="500px"
           justifyContent="center"
           alignItems="center"
         >

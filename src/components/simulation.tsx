@@ -12,11 +12,11 @@ interface Props {
 const Simulation: React.FC<Props> = ({ simulationData }) => {
   return (
     <Container>
-      <Typography variant="h5">Graph</Typography>
+      <Typography paddingTop={2} variant="h5">Kontostand Verlauf</Typography>
       <GraphSection data={simulationData} />
-      <Typography variant="h5">Depot</Typography>
+      <Typography paddingTop={2} variant="h5">Depot Aktivitäten</Typography>
       <DepotSection depotTransactions={simulationData.depotTransactions} />
-      <Typography variant="h5">Transactions</Typography>
+      <Typography paddingTop={2} variant="h5">Transaktionen</Typography>
       <TransactionSection transactions={simulationData.transactions} />
     </Container>
   );
